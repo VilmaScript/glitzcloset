@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.logo-font {
+    font-family: var(--font-satisfy);
+}
+.custom-body-font {
+    font-family: var(--font-roboto);
   }
+
+  .custom-heading {
+    font-family: var(--font-eb-garamond);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.clip-diagonal {
+  clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.text{
+  transform-origin: 50% 50%;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-45deg); /* Starting position */
   }
+ 
+  50% {
+    transform: rotateZ(45deg); /* Rotate left */
+  }
+  
 }
