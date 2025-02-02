@@ -49,13 +49,13 @@ const Hero = () => {
         {carouselItems.map((item, index) => (
           item.id === 1 ? (
             <div key={index} className="relative flex-[0_0_100%] h-[70vh] flex">
-              <div className="text-white text-center z-10 flex-1 flex items-center justify-around bg-[#D2B48C] p-4">
+              <div className="text-white text-center z-10 flex-1 flex items-center justify-around bg-[#A37B5C] p-4">
                 <div>
                   <h2 className={`text-5xl font-bold ${eb_garamond_init.variable} custom-heading mb-6`}>{item.header}</h2>
                   <div className="h-0.5 w-2/4 bg-gray-100 mx-auto mb-6"></div>
                   <p className="font-normal text-gray-50 tracking-widest mb-3">NOW THROUGH 08/25</p>
                   <h2 className={`text-4xl text-gray-50 font-bold mb-6 ${eb_garamond_init.variable} custom-heading`}> <span className="animate-pop-color-change">25%</span> {item.text}</h2>
-                  <button className="bg-[#A37B5C] px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
+                  <button className="bg-[#D2B48C] px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
                 </div>
                 <div className="flex flex-col gap-y-4">
                   <Image

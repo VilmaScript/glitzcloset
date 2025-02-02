@@ -3,13 +3,13 @@ import { eb_garamond_init } from "../layout";
 
 const Introduction = () => {
   return (
-    <div className="flex h-[40vh] w-full bg-[#D2B48C] justify-between gap-9 p-10">
+    <div className="flex h-[40vh] w-full  bg-[#A37B5C] justify-between gap-9 p-10">
         <div className="text-white">
         <h2 className="tracking-wider text-xl">Introducing</h2>
         <h3 className={`text-5xl  ${eb_garamond_init.variable} custom-heading font-medium mb2`}>GLITZINTERIORS</h3>
         <p className="tracking-widest">A LIMITED EDITION COLLECTION</p>
         <p className="mb-5 tracking-widest">WHERE INTERIOR DECOR MEETS CREATIVITY</p>
-        <button className="bg-[#A37B5C] text-white px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
+        <button className="bg-[#D2B48C] text-white px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
         </div>
 
         <div className="grid grid-cols-3 grid-rows-2 gap-3">
