@@ -1,4 +1,5 @@
 import Arrivals from "./_components/Arrivals";
+import FooterImages from "./_components/FooterImages";
 import Hero from "./_components/Hero";
 import Introduction from "./_components/Introduction";
 import LearnMore from "./_components/LearnMore";
@@ -19,6 +20,7 @@ export default function Home() {
    <Reviews/>
    <More/>
    <LearnMore/>
+   <FooterImages/>
     </div>
    
     
