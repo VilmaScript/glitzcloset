@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+     
       animation: {
         'pop-color-change': 'pop-and-color-change 2s ease-in-out infinite', // Animation name with duration
       },
@@ -20,7 +21,8 @@ module.exports = {
         },
       },
       colors: {
-        
+        primary: "#A37B5C",
+        secondary: "#D2B48C",
       },
     },
   },

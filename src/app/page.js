@@ -21,6 +21,7 @@ export default function Home() {
    <More/>
    <LearnMore/>
    <FooterImages/>
+  
     </div>
    
     

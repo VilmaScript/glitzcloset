@@ -40,18 +40,18 @@ function Product() {
             alt={product.slug}
             layout="fixed"
           />
-           <button  className="bg-[#A37B5C] px-2.5 py-0.5 text-white track-wider w-full ">Shop {product.name} </button>
+           <button  className="bg-primary px-2.5 py-0.5 text-white track-wider w-full ">Shop {product.name} </button>
           </div>
           <div className="relative">
           
             <div className="absolute left-0 right-0 -top-10 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-hover:z-10 flex justify-center gap-x-4">
               <Link
                 href={`/product/${product.slug}`}
-                className="bg-white text-[#A37B5C] py-1 px-1.5 rounded-2xl text-xs flex gap-x-2 items-center"
+                className="bg-white text-secondary py-1 px-1.5 rounded-2xl text-xs flex gap-x-2 items-center"
               >
                 Quick View <BsArrowsFullscreen />
               </Link>
-              <button className="bg-white text-[#A37B5C] py-1 px-1.5 rounded-2xl text-xs flex gap-x-2 items-center">
+              <button className="bg-white text-secondary py-1 px-1.5 rounded-2xl text-xs flex gap-x-2 items-center">
                 Add to Cart <IoBagHandleOutline />
               </button>
             </div>

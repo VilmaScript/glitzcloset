@@ -5,6 +5,7 @@ import Navbar from "./_components/Navbar";
 import { Satisfy,EB_Garamond,Roboto, Montserrat } from 'next/font/google';
 import { CartProvider } from "@/context/CartContxt";
 import { ProductsProvider } from "@/context/ProductsContext";
+import Footer from "./_components/Footer";
 
  const metadata = {
   title: "GlitzCloset",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat_init.variable} custom-body-font px-12`}>
       <Navbar/>
         {children}
+        <Footer/>
       </body>
       </CartProvider>
       </ProductsProvider>

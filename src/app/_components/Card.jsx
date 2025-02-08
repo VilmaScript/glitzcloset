@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa6";
 
 const Card = () => {
   return (
-    <div className="relative bg-[#D2B48C] text-[#4e2e15] px-2 py-2">
+    <div className="relative bg-secondary text-[#4e2e15] px-2 py-2">
       <div className="border-2 border-white px-6 py-2">
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full overflow-hidden">
         <Image src="/review1.jpg" alt="Review Image" layout="fill" objectFit="cover" />

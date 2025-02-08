@@ -44,18 +44,18 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 -mx-12 py-4 bg-white z-50 shadow-md  ">
       <div className="flex justify-around items-center">
-        <CiSearch className="text-[#A37B5C] text-2xl" />
+        <CiSearch className="text-primary text-2xl" />
         <div>
-          <h1 className={`text-5xl  ${eb_garamond_init.variable} custom-heading font-medium text-[#A37B5C] mb-4`}>GLITZINTERIORS</h1>
+          <h1 className={`text-5xl  ${eb_garamond_init.variable} custom-heading font-medium text-primary mb-4`}>GLITZINTERIORS</h1>
           <div className="flex justify-center gap-x-8 ">
-            {navLinks.map((item) => <Link className={`font-normal ${pathname === item.path ? "text-[#705126]" : "text-[#4B4B4B]"} text-lg`} key={item.title} href={item.path}>{item.title}</Link>)}
+            {navLinks.map((item) => <Link className={`font-normal ${pathname === item.path ? "text-[#705126]" : "text-secondary"} text-lg`} key={item.title} href={item.path}>{item.title}</Link>)}
           </div>
         </div>
         <div className="flex gap-x-6">
-          <FaTwitter className="text-[#A37B5C]" />
-          <IoLogoFacebook className="text-[#A37B5C]" />
-          <FaInstagram className="text-[#A37B5C]" />
-          <IoCartOutline className="text-[#A37B5C]" />
+          <FaTwitter className="text-primary" />
+          <IoLogoFacebook className="text-primary" />
+          <FaInstagram className="text-primary" />
+          <IoCartOutline className="text-primary" />
 
         </div>
       </div>
