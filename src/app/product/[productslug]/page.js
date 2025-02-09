@@ -18,20 +18,20 @@ import { useProducts } from "@/context/ProductsContext";
 // Data()
 
 function EachProduct() {
-    const {cart,dispatch} =  useCart()
+    const { cart, dispatch } = useCart()
     const { productslug } = useParams(); // Get the slug from URL params
     const [product, setProduct] = useState(null); // State to hold the product data
     const [mainImage, setMainImage] = useState(null); // State for main image
     const [count, setCount] = useState(1)
-    
+
     const { products, loading } = useProducts();
-    
-      if (loading) {
+
+    if (loading) {
         return <p>Loading...</p>;
-      }
+    }
 
     useEffect(() => {
-         function fetchProduct() {
+        function fetchProduct() {
             // // Fetch all products from Sanity
             // const products = await client.fetch(groq`*[_type == "product"]`, { cache: 'no-store' });
             // console.log(products)
@@ -49,11 +49,11 @@ function EachProduct() {
 
     useEffect(() => {
         console.log('Cart state changed:', cart);
-      }, [cart]);
+    }, [cart]);
 
     const addToCart = (product) => {
         dispatch({ type: "ADD_TO_CART", payload: product });
-      };
+    };
 
     if (!product) return <p>Loading...</p>; // Display loading state if product is not yet loaded
 
@@ -87,7 +87,7 @@ function EachProduct() {
                 </div>
 
                 <div className="w-2/4">
-                    <h2 className={`text-4xl font-bold ${eb_garamond_init.variable} custom-heading`}>{product.name || "Product Title"} <span className="text-lg font-medium text-[#D2B48C]">({product.category})</span></h2>
+                    <h2 className={`text-4xl text-primary font-bold ${eb_garamond_init.variable} custom-heading`}>{product.name || "Product Title"} <span className="text-lg font-medium text-[#D2B48C]">({product.category})</span></h2>
                     <p className="mb-10 text-gray-600">
                         <span className="line-through font-light me-3 ">$135.00</span>
                         <span className={`text-2xl text-gray-800 font-bold ${eb_garamond_init.variable} custom-heading me-3`}>
@@ -97,12 +97,27 @@ function EachProduct() {
                         <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> $20 </span> from this item
                     </p>
                     <p className="text-gray-700 text-sm font-medium">{product.description || "Product description goes here"}</p>
-                    <div className="border-2 border-green-950 flex justify-around mt-10 p-2 text-2xl font-medium">
+                    <div className="border-2 mb-3 border-secondary flex justify-around mt-10 p-2 text-2xl font-medium">
                         <button onClick={() => setCount(count - 1)}>-</button>
                         <p>{count}</p>
                         <button onClick={() => setCount(count + 1)}>+</ button>
                     </div>
-                    <button onClick={() => addToCart(product)} className="w-full bg-[#705126] text-white  py-2.5 text-lg mt-3">Add To Cart </button>
+                    
+                    <div className="w-full flex">
+                        <button
+                            onClick={() => addToCart(product)}
+                            className="w-1/2 bg-secondary text-white py-2.5 text-lg me-2 outline-none"
+                        >
+                            Add To Cart
+                        </button>
+                        <button
+                            onClick={() => addToCart(product)}
+                            className="w-1/2 border-2 border-primary text-primary  py-2.5 text-lg outline-none"
+                        >
+                            Back To Shop
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>

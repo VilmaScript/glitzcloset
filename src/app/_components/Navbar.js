@@ -42,7 +42,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="sticky top-0 -mx-12 py-4 bg-white z-50 shadow-md  ">
+    <div className="sticky top-0 -mx-12 py-2 bg-white z-50 shadow-md  ">
       <div className="flex justify-around items-center">
         <CiSearch className="text-primary text-2xl" />
         <div>
