@@ -10,12 +10,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContxt";
 import { useProducts } from "@/context/ProductsContext";
+import Link from "next/link";
 
-// async function Data(){
-//     const products = await client.fetch(groq`*[_type == "product"]`,  { cache: 'no-store' } )
-// console.log(products)
-// }
-// Data()
 
 function EachProduct() {
     const { cart, dispatch } = useCart()
@@ -32,10 +28,7 @@ function EachProduct() {
 
     useEffect(() => {
         function fetchProduct() {
-            // // Fetch all products from Sanity
-            // const products = await client.fetch(groq`*[_type == "product"]`, { cache: 'no-store' });
-            // console.log(products)
-            // Find the product that matches the slug
+
             const foundProduct = products.find((product) => product.slug === productslug);
             setProduct(foundProduct);
             // Set initial main image if product is found and has images
@@ -102,19 +95,19 @@ function EachProduct() {
                         <p>{count}</p>
                         <button onClick={() => setCount(count + 1)}>+</ button>
                     </div>
-                    
+
                     <div className="w-full flex">
                         <button
                             onClick={() => addToCart(product)}
-                            className="w-1/2 bg-secondary text-white py-2.5 text-lg me-2 outline-none"
+                            className="w-1/2 bg-secondary text-white py-2.5 text-lg me-2 outline-none hover:scale-105 active:scale-95 transition-transform duration-300"
                         >
                             Add To Cart
                         </button>
-                        <button
-                            onClick={() => addToCart(product)}
-                            className="w-1/2 border-2 border-primary text-primary  py-2.5 text-lg outline-none"
+                        <button className="w-1/2 border-2 border-primary text-primary  py-2.5 text-lg outline-none hover:scale-105 active:scale-95 transition-transform duration-300"> <Link
+                            href="/shop"
                         >
                             Back To Shop
+                        </Link>
                         </button>
                     </div>
 

@@ -25,10 +25,13 @@ export const ProductsProvider = ({children}) => {
 
     fetchProducts();
   }, []);
+
+  // State to keep track of selected category 
    
+  const [selectedCategory, setSelectedCategory] = useState("All Decor");
+  console.log(selectedCategory);
 
-
-    return <ProductsContext.Provider value={{products,loading }}>
+    return <ProductsContext.Provider value={{products,loading, selectedCategory, setSelectedCategory}}>
         {children}
     </ProductsContext.Provider>
 }

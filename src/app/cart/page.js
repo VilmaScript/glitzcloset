@@ -8,34 +8,45 @@ import { MdCancel } from "react-icons/md";
 import { FaCreditCard, FaShippingFast } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { FaShopify } from "react-icons/fa";
+import { FaSadCry } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Cart() {
- 
+
   const { cart, dispatch } = useCart();
 
- 
+
   const removeFromCart = (id) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: id });
   };
-  const   clearCart = () => {
-    dispatch({ type: "CLEAR_CART"});
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
   };
-   
+
 
   return (
     <div className="my-16">
-    {cart.length === 0 ? "" :(
-       <div className="">
-       <Link href="/shop" className=" hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300 flex gap-1 justify-self-end items-center text-tertiary font-medium underline outline-none">Shop More <FaShopify className="text-tertiary animate-pop-color-change text-xl " /></Link>
-       
-       </div>
-    )}
-      <div className="flex flex-col justify-center items-center ">
-        <h2 className={` ${eb_garamond_init.variable} text-tertiary text-4xl font-medium mb-10 text-center custom-heading`}>
-          {cart.length === 0 ? "Your Cart feels lonely" : ""}
-        </h2>
-      </div>
+      {cart.length === 0 ? "" : (
+        <div className="">
+          <Link href="/shop" className=" hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300 flex gap-1 justify-self-end items-center mb-5 text-tertiary font-medium underline outline-none">Shop More <FaShopify className="text-tertiary animate-pop-color-change text-xl " /></Link>
+
+        </div>
+      )}
+     {cart.length === 0 && (
+  <div className="flex flex-col justify-center items-center h-[40vh]">
+    <h2 className="text-primary text-4xl flex gap-2 items-center font-medium mb-4 custom-heading">
+      Your Cart feels lonely <FaSadCry />
+    </h2>
+
+    <Link
+      href="/shop"
+      className="hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300 flex gap-1 justify-center items-center text-tertiary font-medium underline outline-none"
+    >
+      Shop Here <FaShopify className="text-tertiary animate-pop-color-change text-xl" />
+    </Link>
+  </div>
+)}
+
       {cart.length !== 0 ? (<div className="container px-10 flex gap-24 ">
         <div className="w-3/4">
           <table className="w-full ">
@@ -84,7 +95,7 @@ export default function Cart() {
               />
               <button className="bg-primary py-1.5 px-2.5 rounded-full text-white  hover:scale-105 active:scale-95 transition-transform duration-300">Apply Coupon</button>
             </div>
-            <button onClick={clearCart}  className="outline-none underline text-tertiary font-medium hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300">Clear Cart</button>
+            <button onClick={clearCart} className="outline-none underline text-tertiary font-medium hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300">Clear Cart</button>
           </div>
         </div>
         <div className="w-1/4 p-4 border border-gray-200  shadow-md ">

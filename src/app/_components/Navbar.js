@@ -9,6 +9,7 @@ import { IoLogoFacebook } from "react-icons/io";
 import { FaInstagram } from "react-icons/fa";
 import { eb_garamond_init } from "../layout";
 import { IoCartOutline } from "react-icons/io5";
+import CartIcon from "./CartIcon";
 const navLinks = [
   {
     title: "Home",
@@ -20,7 +21,7 @@ const navLinks = [
   },
   {
     title: "About",
-    path: "/cart"
+    path: "/about"
   },
   {
     title: "Profile",
@@ -51,11 +52,11 @@ const Navbar = () => {
             {navLinks.map((item) => <Link className={`font-normal ${pathname === item.path ? "text-[#705126]" : "text-secondary"} text-lg`} key={item.title} href={item.path}>{item.title}</Link>)}
           </div>
         </div>
-        <div className="flex gap-x-6">
-          <FaTwitter className="text-primary" />
-          <IoLogoFacebook className="text-primary" />
-          <FaInstagram className="text-primary" />
-          <IoCartOutline className="text-primary" />
+        <div className="flex gap-x-6 items-center">
+          <FaTwitter className="text-primary hover:scale-105 active:scale-95 transition-transform duration-300 cursor-pointer" />
+          <IoLogoFacebook className="text-primary hover:scale-105 active:scale-95 transition-transform duration-300 cursor-pointer" />
+          <FaInstagram className="text-primary hover:scale-105 active:scale-95 transition-transform duration-300 cursor-pointer" />
+         <CartIcon/>
 
         </div>
       </div>

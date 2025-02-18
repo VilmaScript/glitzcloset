@@ -3,6 +3,7 @@ import { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { eb_garamond_init } from '../layout'; // Assuming this is your font config
 import Image from "next/image";
+import Link from "next/link";
 
 
 // Sample carousel data
@@ -55,7 +56,7 @@ const Hero = () => {
                   <div className="h-0.5 w-2/4 bg-gray-100 mx-auto mb-6"></div>
                   <p className="font-normal text-gray-50 tracking-widest mb-3">NOW THROUGH 08/25</p>
                   <h2 className={`text-4xl text-gray-50 font-bold mb-6 ${eb_garamond_init.variable} custom-heading`}> <span className="animate-pop-color-change">25%</span> {item.text}</h2>
-                  <button className="bg-secondary px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
+                  <Link href="/shop" className="bg-secondary px-2.5 py-0.5 font-medium track-wider hover:scale-105 active:scale-95 transition-transform duration-300 ">SHOP NOW</Link>
                 </div>
                 <div className="flex flex-col gap-y-4">
                   <Image
@@ -65,7 +66,7 @@ const Hero = () => {
                     height={70}
                     alt={"Product Image"}
                   />
-                
+
                   <Image
                     src={'/feather.jpg'}
                     className="object-cover  border-2 border-white"
@@ -95,7 +96,7 @@ const Hero = () => {
                 >
                   {item.text}
                 </h2>
-                <button className="bg-white px-2.5 py-0.5 font-medium track-wider ">SHOP NOW</button>
+                <Link href="/shop" className="bg-white px-2.5 py-0.5 font-medium track-wider  hover:scale-105 active:scale-95 transition-transform duration-300">SHOP NOW</Link>
               </div>
 
 
