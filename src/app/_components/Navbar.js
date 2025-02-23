@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import { IoMdClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
@@ -8,7 +7,6 @@ import { FaTwitter } from "react-icons/fa";
 import { IoLogoFacebook } from "react-icons/io";
 import { FaInstagram } from "react-icons/fa";
 import { eb_garamond_init } from "../layout";
-import { IoCartOutline } from "react-icons/io5";
 import CartIcon from "./CartIcon";
 const navLinks = [
   {
