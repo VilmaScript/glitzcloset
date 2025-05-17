@@ -49,7 +49,7 @@ const Hero = () => {
       <div className="flex ">
         {carouselItems.map((item, index) => (
           item.id === 1 ? (
-            <div key={index} className="relative flex-[0_0_100%] h-[70vh] flex">
+            <div key={item.id} className="relative flex-[0_0_100%] h-[70vh] flex">
               <div className="text-white text-center gap-8 z-10 flex-1 flex items-center justify-around bg-primary p-4">
                 <div>
                   <h2 className={`text-3xl md:text-5xl font-bold font-eb-garamond mb-6`}>{item.header}</h2>
@@ -87,7 +87,7 @@ const Hero = () => {
               </div>
             </div>
           ) : (
-            <div className=" flex-[0_0_100%] h-[70vh] flex">
+            <div key={item.id} className=" flex-[0_0_100%] h-[70vh] flex">
 
               <div className="bg-[url('/candles.jpg')] bg-cover bg-center h-full w-full p-4 flex flex-col justify-center items-center text-center">
                 <h4 className="animate-pop-color-change mb-4 md:text-lg text-base font-normal">{item.header}</h4>

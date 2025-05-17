@@ -23,7 +23,7 @@ const AboutPage = () => {
             GLITZINTERIORS is a premier interior design company dedicated to transforming spaces into stunning works of art. Our team of experienced designers and craftsmen work closely with clients to create personalized designs that reflect their unique style and needs.
           </p>
           <p className='text-secondary'>
-            With a passion for innovation and a commitment to excellence, we strive to exceed our clients' expectations at every turn. Whether you're looking to redesign your home, office, or commercial space, GLITZINTERIORS is here to bring your vision to life.
+            With a passion for innovation and a commitment to excellence, we strive to exceed our clients expectations at every turn. Whether you&apos;re looking to redesign your home, office, or commercial space, GLITZINTERIORS is here to bring your vision to life.
           </p>
           <div className='grid md:grid-cols-6 gap-x-7 mt-14'>
             <div className='col-span-3'>

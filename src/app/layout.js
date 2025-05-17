@@ -6,7 +6,7 @@ import Navbar from "./_components/Navbar";
 import "./globals.css";
 import { Satisfy,EB_Garamond, Montserrat } from 'next/font/google';
 
- export const metadata = {
+ const metadata = {
   title: "GlitzInteriors",
   description: "Interior Decor Store",
 };
