@@ -50,12 +50,12 @@ const Hero = () => {
         {carouselItems.map((item, index) => (
           item.id === 1 ? (
             <div key={index} className="relative flex-[0_0_100%] h-[70vh] flex">
-              <div className="text-white text-center z-10 flex-1 flex items-center justify-around bg-primary p-4">
+              <div className="text-white text-center gap-8 z-10 flex-1 flex items-center justify-around bg-primary p-4">
                 <div>
-                  <h2 className={`text-5xl font-bold ${eb_garamond_init.variable} custom-heading mb-6`}>{item.header}</h2>
+                  <h2 className={`text-3xl md:text-5xl font-bold font-eb-garamond mb-6`}>{item.header}</h2>
                   <div className="h-0.5 w-2/4 bg-gray-100 mx-auto mb-6"></div>
-                  <p className="font-normal text-gray-50 tracking-widest mb-3">NOW THROUGH 08/25</p>
-                  <h2 className={`text-4xl text-gray-50 font-bold mb-6 ${eb_garamond_init.variable} custom-heading`}> <span className="animate-pop-color-change">25%</span> {item.text}</h2>
+                  <p className="font-normal text-sm md:text-base text-gray-50 tracking-widest mb-3">NOW THROUGH 08/25</p>
+                  <h2 className={`text-2xl md:text-4xl text-gray-50 font-bold mb-6 font-eb-garamond`}> <span className="animate-pop-color-change">25%</span> {item.text}</h2>
                   <Link href="/shop" className="bg-secondary px-2.5 py-0.5 font-medium track-wider hover:scale-105 active:scale-95 transition-transform duration-300 ">SHOP NOW</Link>
                 </div>
                 <div className="flex flex-col gap-y-4">
@@ -77,7 +77,7 @@ const Hero = () => {
                 </div>
 
               </div>
-              <div className="image-side flex-1 relative">
+              <div className="hidden md:block image-side flex-1 relative">
 
                 <img
                   src={item.img}
@@ -90,20 +90,16 @@ const Hero = () => {
             <div className=" flex-[0_0_100%] h-[70vh] flex">
 
               <div className="bg-[url('/candles.jpg')] bg-cover bg-center h-full w-full p-4 flex flex-col justify-center items-center text-center">
-                <h4 className="animate-pop-color-change mb-4 text-lg font-normal">{item.header}</h4>
+                <h4 className="animate-pop-color-change mb-4 md:text-lg text-base font-normal">{item.header}</h4>
                 <h2
-                  className={`text-5xl font-bold ${eb_garamond_init.variable} text-white custom-heading mb-5`}
+                  className={`md:text-5xl text-3xl font-bold font-eb-garamond text-white mb-5`}
                 >
                   {item.text}
                 </h2>
                 <Link href="/shop" className="bg-white px-2.5 py-0.5 font-medium track-wider  hover:scale-105 active:scale-95 transition-transform duration-300">SHOP NOW</Link>
               </div>
 
-
-
-
-              <div className="bg-[url('/vases.jpg')] bg-cover bg-center h-full w-full "></div>
-
+              <div className="hidden md:block bg-[url('/vases.jpg')] bg-cover bg-center h-full w-full"></div>
 
             </div>
           )

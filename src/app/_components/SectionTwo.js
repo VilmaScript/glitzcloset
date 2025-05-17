@@ -9,7 +9,7 @@ const SectionOne = () => {
             <Product
              imageWidth={250} 
              imageHeight={300} 
-             sliceRange={[3, 6]} 
+             sliceRange={[1,4]} 
              showCategoryButton={true}
              topValue="-top-16"
             />

@@ -1,15 +1,14 @@
 
-import "./globals.css";
-import Navbar from "./_components/Navbar";
-
-import { Satisfy,EB_Garamond,Roboto, Montserrat } from 'next/font/google';
-import { CartProvider } from "@/context/CartContxt";
-import { ProductsProvider } from "@/context/ProductsContext";
+import { Toaster } from "react-hot-toast";
+import ClientLayout from "./_components/ClientLayout";
 import Footer from "./_components/Footer";
+import Navbar from "./_components/Navbar";
+import "./globals.css";
+import { Satisfy,EB_Garamond, Montserrat } from 'next/font/google';
 
- const metadata = {
-  title: "GlitzCloset",
-  description: "Unisex Jewelry store",
+ export const metadata = {
+  title: "GlitzInteriors",
+  description: "Interior Decor Store",
 };
 
 export const satisfy_init = Satisfy({
@@ -34,16 +33,30 @@ export const montserrat_init = Montserrat({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <ProductsProvider>
-      <CartProvider>
-      <body className={`${montserrat_init.variable} custom-body-font px-12`}>
+    <html lang="en" className="font-monserrat px-12">
+      <body >
+      <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 3000,
+            style: {
+              background: '#fff',
+              color: '#D2B48C',
+              borderRadius: '8px',
+              padding: '12px',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', 
+            },
+          }}
+        />
+        
       <Navbar/>
+     <ClientLayout>
         {children}
+        </ClientLayout>
         <Footer/>
+        
       </body>
-      </CartProvider>
-      </ProductsProvider>
+     
     </html>
   );
 }

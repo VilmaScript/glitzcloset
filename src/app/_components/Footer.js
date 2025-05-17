@@ -1,5 +1,4 @@
 import { FaInstagram, FaLongArrowAltRight, FaTwitter } from "react-icons/fa"
-import { eb_garamond_init } from "../layout"
 import { IoLogoFacebook } from "react-icons/io"
 
 
@@ -7,7 +6,7 @@ const Footer = () => {
   return (
    <div className="bg-primary">
      <div className="bg-primary -mx-12 px-8 pt-8 text-white">
-      <div className="grid sm:grid-cols-3 grid-cols-2 gap-x-10 ">
+      <div className="grid sm:grid-cols-3 grid-cols-1 gap-10 ">
         <ul className="tracking-wide space-y-2 ">
           <li className="font-medium">Quicklinks</li>
           <li>Shop</li>
@@ -22,8 +21,8 @@ const Footer = () => {
           <li>Email: glitzinteriors@gmail.com </li>
         </ul>
        <div className="">
-       <h2 className={`text-4xl  ${eb_garamond_init.variable} custom-heading font-medium text-white mt-5 sm:mt-0 mb-2`}>GLITZINTERIORS</h2>
-       <p className="text-sm text-gray-100">Glitz Interior brings elegance and style to every space, transforming homes with timeless designs and modern aesthetics. We specialize in curated decor that blends luxury with comfort, creating interiors that reflect your personality. Let us turn your vision into reality!</p>
+       <h2 className={`text-4xl font-eb-garamond font-medium text-white mt-5 sm:mt-0 mb-2`}>GLITZINTERIORS</h2>
+       <p className=" ">Glitz Interior brings elegance and style to every space, transforming homes with timeless designs and modern aesthetics. We specialize in curated decor that blends luxury with comfort, creating interiors that reflect your personality. Let us turn your vision into reality!</p>
        <div className="flex gap-x-6 mt-5">
           <FaTwitter />
           <IoLogoFacebook />

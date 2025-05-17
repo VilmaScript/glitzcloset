@@ -1,6 +1,5 @@
 "use client";
 
-import { eb_garamond_init } from "@/app/layout";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -8,6 +7,8 @@ import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContxt";
 import { useProducts } from "@/context/ProductsContext";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import Loader from "@/app/_components/Loader";
 
 function EachProduct() {
     const { cart, dispatch } = useCart();
@@ -36,6 +37,7 @@ function EachProduct() {
 
     const addToCart = (product) => {
         dispatch({ type: "ADD_TO_CART", payload: product });
+        toast.success('Added to cart!')
     };
     
     const updateCartQty = (product, newQuantity) => {
@@ -45,12 +47,12 @@ function EachProduct() {
         });
     };
     
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div className="flex items-center justify-center h-screen"><Loader/></div>
 
     return (
         <div>
             {product ? (
-                <div className="bg-gray-50 w-3/4 flex gap-x-32 mx-auto mt-7 mb-2 p-10">
+                <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-7 mb-7 p-7">
                     <div>
                         {/* Main Image */}
                         <Image
@@ -77,21 +79,21 @@ function EachProduct() {
                         </div>
                     </div>
 
-                    <div className="w-2/4">
-                        <h2 className={`text-4xl text-primary font-bold ${eb_garamond_init.variable} custom-heading`}>
+                    <div className="md:w-2/4 w-full mt-5 md:mt-0">
+                        <h2 className={`md:text-4xl text-2xl text-primary font-bold font-eb-garamond`}>
                             {product.name || "Product Title"}{" "}
                             <span className="text-lg font-medium text-[#D2B48C]">({product.category})</span>
                         </h2>
                         <p className="mb-10 text-gray-600">
-                            <span className="line-through font-light me-3 ">$135.00</span>
-                            <span className={`text-2xl text-gray-800 font-bold ${eb_garamond_init.variable} custom-heading me-3`}>
+                            {/* <span className="line-through font-light me-3 ">$135.00</span> */}
+                            <span className={`text-2xl text-gray-800 font-bold font-eb-garamond me-3`}>
                                 ${product.price}.00
                             </span>
-                            you saved
-                            <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> $20 </span> from this item
+                            Get 
+                            <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> 10% Off </span> from this item with code <span className="text-primary font-medium">Vilma</span>
                         </p>
                         <p className="text-gray-700 text-sm font-medium">{product.description || "Product description goes here"}</p>
-                        <div className={`border-2 mb-3 {eb_garamond_init.variable} custom-heading text-tertiary border-secondary flex justify-around mt-10 p-2 text-2xl font-medium`}>
+                        <div className={`border-2 mb-3 font-eb-garamond text-tertiary border-secondary flex justify-around mt-10 p-2 text-2xl font-medium`}>
                             <button onClick={() => setCount((prev) => Math.max(1, prev - 1))}>-</button>
                             <p>{count}</p>
                             <button onClick={() => setCount((prev) => prev + 1)}>+</button>

@@ -2,17 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.logo-font {
-    font-family: var(--font-satisfy);
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-eb-garamond: "EB Garamond", serif;
+  --font-satisfy: "Satisfy", cursive;
 }
-.custom-body-font {
-    font-family: var(--font-roboto);
-  }
 
-  .custom-heading {
-    font-family: var(--font-eb-garamond);
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+ 
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Utility classes to use fonts */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-eb-garamond {
+  font-family: var(--font-eb-garamond);
+}
+
+.font-satisfy {
+  font-family: var(--font-satisfy);
+}
+
 
 .clip-diagonal {
   clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
@@ -21,6 +41,16 @@
 .text{
   transform-origin: 50% 50%;
   animation: rotate 3s ease-in-out infinite;
+}
+
+/* styles/reveal.css */
+.reveal {
+  transition: all 0.6s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
+.reveal:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -33,4 +63,47 @@
     transform: rotateZ(45deg); /* Rotate left */
   }
   
+}
+
+@layer utilities {
+  /* Custom scrollbar for WebKit browsers */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3.5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #D2B48C; /* Scrollbar color */
+    border-radius: 2px;
+    min-height: 40px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #e9cba4; /* lighter color when hovered */
+  }
+
+  
+}
+
+button{
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
 }
