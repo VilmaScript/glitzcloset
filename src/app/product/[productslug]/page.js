@@ -39,15 +39,15 @@ function EachProduct() {
         dispatch({ type: "ADD_TO_CART", payload: product });
         toast.success('Added to cart!')
     };
-    
+
     const updateCartQty = (product, newQuantity) => {
         dispatch({
             type: "UPDATE_QUANTITY",
             payload: { _id: product._id, quantity: newQuantity },
         });
     };
-    
-    if (loading) return <div className="flex items-center justify-center h-screen"><Loader/></div>
+
+    if (loading) return <div className="flex items-center justify-center h-screen"><Loader /></div>
 
     return (
         <div className="-mx-12">
@@ -55,28 +55,36 @@ function EachProduct() {
                 <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-7 mb-7 p-7 ">
                     <div>
                         {/* Main Image */}
-                        <Image
-                            src={mainImage || "/femalewatch.jpg"}
-                            className="object-cover"
-                            width={350}
-                            height={200}
-                            alt={product.title || "Product Image"}
-                        />
+                        <div className="w-full flex justify-center">
+                            <div className="w-[350px] h-[350px] overflow-hidden flex items-center justify-center">
+                                <Image
+                                    src={mainImage || "/femalewatch.jpg"}
+                                    width={350}
+                                    height={200}
+                                    className="w-full h-full object-cover"
+                                    alt={product.title || "Product Image"}
+                                />
+                            </div>
+                        </div>
+
+
 
                         {/* Thumbnail Images */}
                         <div className="flex gap-4 mt-4">
                             {product.images?.map((image, index) => (
-                                <Image
-                                    key={index}
-                                    src={urlFor(image).url()}
-                                    width={70}
-                                    height={50}
-                                    className="cursor-pointer border border-gray-300 hover:border-gray-500"
-                                    alt={`${product.title} thumbnail ${index + 1}`}
-                                    onClick={() => setMainImage(urlFor(image).url())} // Update main image on click
-                                />
+                                <div key={index} className="w-[70px] h-[60px] overflow-hidden border border-gray-300 hover:border-gray-500 ">
+                                    <Image
+                                        src={urlFor(image).url()}
+                                        width={70}
+                                        height={50}
+                                        alt={`${product.title} thumbnail ${index + 1}`}
+                                        className="cursor-pointer w-full h-full object-cover"
+                                        onClick={() => setMainImage(urlFor(image).url())}
+                                    />
+                                </div>
                             ))}
                         </div>
+
                     </div>
 
                     <div className="md:w-2/4 w-full mt-5 md:mt-0">
@@ -89,7 +97,7 @@ function EachProduct() {
                             <span className={`text-2xl text-gray-800 font-bold font-eb-garamond me-3`}>
                                 ${product.price}.00
                             </span>
-                            Get 
+                            Get
                             <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> 10% Off </span> from this item with code <span className="text-primary font-medium">Vilma</span>
                         </p>
                         <p className="text-gray-700 text-sm font-medium ">{product.description || "Product description goes here"}</p>
@@ -101,12 +109,12 @@ function EachProduct() {
 
                         <div className="w-full flex">
                             <button
-                                onClick={() =>{
-                                    addToCart({ ...product, quantity: count }); 
-                                    updateCartQty(product, count); 
+                                onClick={() => {
+                                    addToCart({ ...product, quantity: count });
+                                    updateCartQty(product, count);
                                 }
-                                    
-                                } 
+
+                                }
                                 className="w-1/2 bg-secondary text-white py-2.5 text-lg me-2 outline-none hover:scale-105 active:scale-95 transition-transform duration-300"
                             >
                                 Add To Cart
@@ -119,8 +127,8 @@ function EachProduct() {
                 </div>
             ) : (
                 <div className="flex items-center justify-center h-[80vh]">
-        <Loader />
-      </div>
+                    <Loader />
+                </div>
             )}
         </div>
     );

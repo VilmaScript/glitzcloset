@@ -16,18 +16,12 @@ export default function Home() {
       <Reveal>
         <Hero />
       </Reveal>
-      <Reveal>
         <SectionTwo />
-      </Reveal>
-      <Reveal>
         <SectionOne />
-      </Reveal>
       <Reveal>
         <Arrivals />
       </Reveal>
-      <Reveal>
         <Introduction />
-      </Reveal>
       <Reveal>
         <Reviews />
       </Reveal>

@@ -1,6 +1,6 @@
 import Loader from "./Loader";
 import Product from "./Product";
-import Reveal from "./Reveal";
+
 
 const MainContent = ({ setPage, totalProducts, page, loading }) => {
   const totalPages = Math.ceil(totalProducts / 8);
@@ -44,7 +44,7 @@ const MainContent = ({ setPage, totalProducts, page, loading }) => {
     <div>
       {/* Wrapper with padding and max-width for proper centering */}
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-         <Reveal>
+         
         <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 mb-10">
          
           <Product
@@ -56,7 +56,7 @@ const MainContent = ({ setPage, totalProducts, page, loading }) => {
           />
       
         </div>
-        </Reveal>    
+           
       </div>
 
       <div className="my-8 text-center">

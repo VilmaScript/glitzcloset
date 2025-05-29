@@ -7,10 +7,8 @@ import Product from "./Product";
      const { products, loading } = useProducts();
    
      if (loading) {
-       return <p>Loading...</p>;
+       return <div className="flex items-center justify-center "><Loader /></div>;
      }
-   
-     console.log(products);
    
     
   return (

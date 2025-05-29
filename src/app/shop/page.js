@@ -14,16 +14,16 @@ export default function Shop() {
     <div className="overflow-hidden -mx-12 relative">
       
       {/* Desktop layout */}
-      <div className="grid grid-cols-1 md:grid-cols-[15vw_1fr] gap-6 px-12 mt-8 min-h-screen">
+      <div className="grid grid-cols-1 lg:grid-cols-[15vw_1fr] gap-6 px-12 mt-8 min-h-screen">
 
         {/* Sidebar for desktop */}
-        <div className="h-[70vh] hidden md:flex overflow-y-auto">
+        <div className="h-[70vh] hidden lg:flex overflow-y-auto">
           <SideBar setCategory={setCategory} />
         </div>
 
         <div >
           {/* Mobile menu icon */}
-         <div className=" md:hidden cursor-pointer flex gap-2 items-center mb-4">
+         <div className=" lg:hidden cursor-pointer flex gap-2 items-center mb-4">
          <RiMenuSearchLine 
             className="text-xl text-primary  block "
             onClick={() => setShowSidebar(true)}

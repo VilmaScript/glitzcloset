@@ -45,7 +45,7 @@ function Product({
       {products.slice(...sliceRange).map((product, i) => (
         <div
           key={product._id}
-          className="bg-white inline-block p-5 relative group"
+          className="bg-white inline-block p-5 relative group mx-auto"
         >
 
           <div
