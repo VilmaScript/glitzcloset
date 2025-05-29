@@ -17,7 +17,7 @@ const carouselItems = [
     id: 2,
     header: "NEW ARRIVALS IN",
     text: "CANDLES & VASES",
-    // img: "/kitchen.jpg",
+     img: "/kitchen.jpg",
   },
 
 ];
