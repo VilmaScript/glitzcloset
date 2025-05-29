@@ -45,7 +45,7 @@ const Hero = () => {
   }, [emblaApi]);
 
   return (
-    <div className="overflow-hidden relative mb-10" ref={emblaRef}>
+    <div className="overflow-hidden relative -mx-12 md:-mx-0" ref={emblaRef}>
       <div className="flex ">
         {carouselItems.map((item, index) => (
           item.id === 1 ? (

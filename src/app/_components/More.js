@@ -4,7 +4,7 @@ import { PiPlantLight } from "react-icons/pi";
 
 const More = () => {
   return (
-    <div className="text-center my-20 p-10 text-white bg-primary">
+    <div className="-mx-12 md:-mx-0 text-center my-20 p-10 text-white bg-primary">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:px-20  justify-center ">
         <div className="flex flex-col items-center px-4" >
         <GiWorld size={70} className="mb-2"/>

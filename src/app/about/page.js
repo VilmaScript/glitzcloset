@@ -2,11 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import { FaInstagram, FaTwitter } from 'react-icons/fa'
 import { IoLogoFacebook } from 'react-icons/io'
+import Reveal from '../_components/Reveal'
 
 const AboutPage = () => {
   return (
-    <div>
+     <Reveal>
+    <div className='-mx-12'>
       <div className='grid grid-cols-1 md:grid-cols-12 p-12 gap-10'>
+     
         <div className='col-span-5'>
           <Image
             src={"/About.jpg"}
@@ -17,6 +20,8 @@ const AboutPage = () => {
                   }`}
           />
         </div>
+
+    
         <div className=" col-span-7">
           <h1 className="text-3xl font-medium mb-4 text-primary font-eb-garamond">ABOUT GLITZINTERIORS</h1>
           <p className="mb-5 text-secondary">
@@ -53,12 +58,11 @@ const AboutPage = () => {
           </div>
         </div>
 
-
-
       </div>
 
-
     </div>
+    </Reveal>
+    
   )
 }
 

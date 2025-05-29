@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Introduction = () => {
   return (
-    <div className=" block md:flex md:h-[40vh]  w-full  bg-primary justify-between gap-9 p-10">
+    <div className="-mx-12 md:-mx-0 block md:flex md:h-[40vh] bg-primary justify-between gap-9 p-10">
       <div className="text-white mb-7 md:mb-0 ">
         <h2 className="tracking-wider text-xl">Introducing</h2>
         <h3 className={`md:text-5xl text-3xl font-eb-garamond font-medium mb2`}>GLITZINTERIORS</h3>

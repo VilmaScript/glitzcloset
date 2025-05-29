@@ -1,5 +1,6 @@
 import Loader from "./Loader";
 import Product from "./Product";
+import Reveal from "./Reveal";
 
 const MainContent = ({ setPage, totalProducts, page, loading }) => {
   const totalPages = Math.ceil(totalProducts / 8);
@@ -32,24 +33,30 @@ const MainContent = ({ setPage, totalProducts, page, loading }) => {
   const buttons = getButtons();
 
   if (loading) {
-      return <div className="flex items-center justify-center h-[80vh]">
+    return (
+      <div className="flex items-center justify-center h-[80vh]">
         <Loader />
-      </div>;
-  
-  
-    }
+      </div>
+    );
+  }
 
   return (
     <div>
+      {/* Wrapper with padding and max-width for proper centering */}
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+         <Reveal>
+        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+         
+          <Product
+            imageWidth={230}
+            imageHeight={230}
+            sliceRange={[0, 8]}
+            showCategoryButton={false}
+            topValue="-top-12"
+          />
       
-      <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 mb-10">
-        <Product
-          imageWidth={230}
-          imageHeight={230}
-          sliceRange={[0, 8]}
-          showCategoryButton={false}
-          topValue="-top-12"
-        />
+        </div>
+        </Reveal>    
       </div>
 
       <div className="my-8 text-center">
@@ -80,4 +87,3 @@ const MainContent = ({ setPage, totalProducts, page, loading }) => {
 };
 
 export default MainContent;
-

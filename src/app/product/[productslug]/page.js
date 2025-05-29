@@ -50,9 +50,9 @@ function EachProduct() {
     if (loading) return <div className="flex items-center justify-center h-screen"><Loader/></div>
 
     return (
-        <div>
+        <div className="-mx-12">
             {product ? (
-                <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-7 mb-7 p-7">
+                <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-7 mb-7 p-7 ">
                     <div>
                         {/* Main Image */}
                         <Image
@@ -84,7 +84,7 @@ function EachProduct() {
                             {product.name || "Product Title"}{" "}
                             <span className="text-lg font-medium text-[#D2B48C]">({product.category})</span>
                         </h2>
-                        <p className="mb-10 text-gray-600">
+                        <p className="mb-5 text-gray-600">
                             {/* <span className="line-through font-light me-3 ">$135.00</span> */}
                             <span className={`text-2xl text-gray-800 font-bold font-eb-garamond me-3`}>
                                 ${product.price}.00
@@ -92,7 +92,7 @@ function EachProduct() {
                             Get 
                             <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> 10% Off </span> from this item with code <span className="text-primary font-medium">Vilma</span>
                         </p>
-                        <p className="text-gray-700 text-sm font-medium">{product.description || "Product description goes here"}</p>
+                        <p className="text-gray-700 text-sm font-medium ">{product.description || "Product description goes here"}</p>
                         <div className={`border-2 mb-3 font-eb-garamond text-tertiary border-secondary flex justify-around mt-10 p-2 text-2xl font-medium`}>
                             <button onClick={() => setCount((prev) => Math.max(1, prev - 1))}>-</button>
                             <p>{count}</p>
@@ -118,7 +118,9 @@ function EachProduct() {
                     </div>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <div className="flex items-center justify-center h-[80vh]">
+        <Loader />
+      </div>
             )}
         </div>
     );

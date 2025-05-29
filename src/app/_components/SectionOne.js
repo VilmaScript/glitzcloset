@@ -4,7 +4,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const SectionTwo = () => {
   return (
-    <div className='w-full bg-primary  mt-20 flex flex-col items-center justify-center h-[40vh] p-4 text-center'>
+    <div className=' -mx-12 md:-mx-0 bg-primary mt-20 flex flex-col items-center justify-center h-[40vh] p-4 text-center'>
       <h2 className={`md:text-5xl text-4xl text-white text-center font-eb-garamond `}>Join our Email List Today</h2>
       <p className='text-gray-100 mb-4'>Be the first to know about our new collections and exclusive offers.</p>
       <div className="relative w-full max-w-sm">
