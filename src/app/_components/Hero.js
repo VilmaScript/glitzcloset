@@ -1,7 +1,6 @@
 "use client"
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { eb_garamond_init } from '../layout'; // Assuming this is your font config
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,13 +11,13 @@ const carouselItems = [
     id: 1,
     header: "THE WINTER SALE",
     text: " OFF EVERYTHING",
-    img: "/Kitchen.jpg",
+    img: "/kitchen.jpg",
   },
   {
     id: 2,
     header: "NEW ARRIVALS IN",
     text: "CANDLES & VASES",
-    img: "/Kitchen.jpg",
+    // img: "/kitchen.jpg",
   },
 
 ];
