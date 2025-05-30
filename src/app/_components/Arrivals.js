@@ -1,6 +1,7 @@
 "use client"
 import { useProducts } from "@/context/ProductsContext";
 import Product from "./Product";
+import Loader from "./Loader";
 
  function Arrivals()  {
     // Fetch products without caching
