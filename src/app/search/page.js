@@ -62,49 +62,94 @@ export default function SearchPage() {
         <p className="text-center text-secondary mt-10">No products found...Search only by category</p>
         
       ) : (
-        <>
-          {products.map((product) => (
-            <div
-              key={product._id}
-              className="bg-white inline-block p-5 relative group"
-            >
-              <div className="relative" style={{ width: "200px", height: "200px" }}>
-                <FaRegHeart
-                  onClick={() => handleFavorite(product)}
-                  className="-mb-8 cursor-pointer hover:text-primary absolute z-10 mt-4 mx-2 text-white"
-                />
+        // <>
+        //   {products.map((product) => (
+        //     <div
+        //       key={product._id}
+        //       className="bg-white inline-block p-5 relative group"
+        //     >
+        //       <div className="relative" style={{ width: "200px", height: "200px" }}>
+        //         <FaRegHeart
+        //           onClick={() => handleFavorite(product)}
+        //           className="-mb-8 cursor-pointer hover:text-primary absolute z-10 mt-4 mx-2 text-white"
+        //         />
 
-                {!imageLoaded && (
-                  <div className="absolute inset-0 bg-gray-100 animate-pulse z-10 rounded-md" />
-                )}
+        //         {!imageLoaded && (
+        //           <div className="absolute inset-0 bg-gray-100 animate-pulse z-10 rounded-md" />
+        //         )}
 
-                <Link href={`/product/${product.slug}`}>
-                  <Image
-                    src={
-                      product.images?.length
-                        ? urlFor(product.images[0]).url()
-                        : "/placeholder.jpg"
-                    }
-                    width={200}
-                    height={200}
-                    alt={product.slug}
-                    onLoad={() => setImageLoaded(true)}
-                    className={`object-cover w-full h-full transition-all duration-300 ${
-                      imageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                </Link>
+        //         <Link href={`/product/${product.slug}`}>
+        //           <Image
+        //             src={
+        //               product.images?.length
+        //                 ? urlFor(product.images[0]).url()
+        //                 : "/placeholder.jpg"
+        //             }
+        //             width={200}
+        //             height={200}
+        //             alt={product.slug}
+        //             onLoad={() => setImageLoaded(true)}
+        //             className={`object-cover w-full h-full transition-all duration-300 ${
+        //               imageLoaded ? "opacity-100" : "opacity-0"
+        //             }`}
+        //           />
+        //         </Link>
 
-                <div className="p-1.5">
-                  <p className="text-primary font-medium">{product.name}</p>
-                  <p className="text-secondary text-sm font-medium">
-                    ${product.price}.00 USD
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </>
+        //         <div className="p-1.5">
+        //           <p className="text-primary font-medium">{product.name}</p>
+        //           <p className="text-secondary text-sm font-medium">
+        //             ${product.price}.00 USD
+        //           </p>
+        //         </div>
+        //       </div>
+        //     </div>
+        //   ))}
+        // </>
+
+        <div className="flex flex-wrap justify-center gap-4">
+  {products.map((product) => (
+    <div
+      key={product._id}
+      className="bg-white p-5 relative group mb-5"
+    >
+      <div className="relative" style={{ width: "200px", height: "200px" }}>
+        <FaRegHeart
+          onClick={() => handleFavorite(product)}
+          className="-mb-8 cursor-pointer hover:text-primary absolute z-10 mt-4 mx-2 text-white"
+        />
+
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-100 animate-pulse z-10 rounded-md" />
+        )}
+
+        <Link href={`/product/${product.slug}`}>
+          <Image
+            src={
+              product.images?.length
+                ? urlFor(product.images[0]).url()
+                : "/placeholder.jpg"
+            }
+            width={200}
+            height={200}
+            alt={product.slug}
+            onLoad={() => setImageLoaded(true)}
+            className={`object-cover w-full h-full transition-all duration-300 ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </Link>
+
+        <div className="p-1.5">
+          <p className="text-primary font-medium">{product.name}</p>
+          <p className="text-secondary text-sm font-medium">
+            ${product.price}.00 USD
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
       )}
     </div>
   );
