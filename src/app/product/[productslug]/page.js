@@ -52,7 +52,7 @@ function EachProduct() {
     return (
         <div className="-mx-12">
             {product ? (
-                <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-7 mb-7 p-7 ">
+                <div className="bg-white shadow-lg w-full md:w-3/4 block md:flex gap-x-32 mx-auto mt-2 mb-7 p-7 ">
                     <div>
                         {/* Main Image */}
                         <div className="w-full flex justify-center">
@@ -98,7 +98,7 @@ function EachProduct() {
                                 ${product.price}.00
                             </span>
                             Get
-                            <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> 10% Off </span> from this item with code <span className="text-primary font-medium">Vilma</span>
+                            <span className="bg-amber-300 text-white px-2 py-0.5 mx-1.5 "> 10% Off </span> from this item with code <span className="text-primary font-medium">vilma</span>
                         </p>
                         <p className="text-gray-700 text-sm font-medium ">{product.description || "Product description goes here"}</p>
                         <div className={`border-2 mb-3 font-eb-garamond text-tertiary border-secondary flex justify-around mt-10 p-2 text-2xl font-medium`}>

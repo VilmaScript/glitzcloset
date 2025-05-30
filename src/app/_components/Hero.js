@@ -9,7 +9,7 @@ import Link from "next/link";
 const carouselItems = [
   {
     id: 1,
-    header: "THE WINTER SALE",
+    header: "THE SUMMER SALE",
     text: " OFF EVERYTHING",
     img: "/kitchen.jpg",
   },
@@ -17,7 +17,7 @@ const carouselItems = [
     id: 2,
     header: "NEW ARRIVALS IN",
     text: "CANDLES & VASES",
-     img: "/kitchen.jpg",
+    img: "/kitchen.jpg",
   },
 
 ];
@@ -58,21 +58,24 @@ const Hero = () => {
                   <Link href="/shop" className="bg-secondary px-2.5 py-0.5 font-medium track-wider hover:scale-105 active:scale-95 transition-transform duration-300 ">SHOP NOW</Link>
                 </div>
                 <div className="flex flex-col gap-y-4">
-                  <Image
-                    src={'/vase.jpg'}
-                    className="object-cover  border-2 border-white"
-                    width={150}
-                    height={70}
-                    alt={"Product Image"}
-                  />
-
-                  <Image
-                    src={'/feather.jpg'}
-                    className="object-cover  border-2 border-white"
-                    width={150}
-                    height={70}
-                    alt={"Product Image"}
-                  />
+                  <div className="w-[130px] h-[130px] overflow-hidden border-2 border-white">
+                    <Image
+                      src={'/figurines.jpg'}
+                      className="object-cover"
+                      width={150}
+                      height={70}
+                      alt={"Product Image"}
+                    />
+                  </div>
+                  <div className="w-[130px] h-[130px] overflow-hidden border-2 border-white">
+                    <Image
+                      src={'/vase2.jpg'}
+                      className="object-cover"
+                      width={150}
+                      height={70}
+                      alt={"Product Image"}
+                    />
+                  </div>
                 </div>
 
               </div>

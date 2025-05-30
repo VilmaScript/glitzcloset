@@ -28,7 +28,7 @@ const Navbar = () => {
         </Link>
 
         <div className="">
-        <Link href="/"><h1 className="md:text-5xl text-3xl font-eb-garamond font-medium text-primary mb-4">GLITZINTERIORS</h1></Link>
+        <Link href="/"><h1 className="md:text-5xl sm:text-3xl text-2xl font-eb-garamond font-medium text-primary mb-4">GLITZINTERIORS</h1></Link>
           <div className="justify-center items-center gap-x-8 hidden md:flex">
             {navLinks.map((item) => (
               <Link

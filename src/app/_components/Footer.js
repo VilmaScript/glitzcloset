@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex justify-between">
           <div className="relative w-full max-w-sm">
             <p className="mb-2 font-medium mt-5">Subscribe to Our Newsletter</p>
-            <div className="relative w-full max-w-sm ">
+            <div className="relative w-full max-w-sm mb-6">
               <input
                 type="email"
                 placeholder="Enter your email"

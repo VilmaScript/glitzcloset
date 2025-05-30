@@ -240,13 +240,10 @@ export default function Cart() {
     //         </div>
     //       </div>
     //     </div>
-    <div className="my-8 container mx-auto">
+    <div className="mb-8  container mx-auto">
       {/* -------- title & shop-more link -------- */}
       {!!cart.length && (
-        <div className="flex flex-col md:flex-row md:justify-between mb-4 items-center">
-          <h3 className="sm:text-3xl text-lg text-tertiary font-medium text-center sm:text-left">
-            Check Out Your Orders
-          </h3>
+        <div className="flex flex-col  justify-center mb-2 items-center">
           <Link
             href="/shop"
             className="mt-2 sm:mt-0 hover:text-secondary hover:scale-105 active:scale-95 transition-transform duration-300 flex gap-1 items-center text-tertiary font-medium underline"
